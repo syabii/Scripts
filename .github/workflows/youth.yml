@@ -20,9 +20,7 @@ jobs:
         YOUTH_REDBODY: ${{ secrets.YOUTH_REDBODY }}
         YOUTH_TIME: ${{ secrets.YOUTH_TIME }}
     steps:
-      - name: Checkout
-        run: |
-          git clone https://github.com/Syabii/Scripts.git ~/Scripts
+      - uses: actions/checkout@v1
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
