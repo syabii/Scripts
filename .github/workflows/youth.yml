@@ -30,7 +30,7 @@ jobs:
           node-version: 12.x
       - name: npm install
         run: |          
-          cd ~/JavaScript
+          cd ~/Scripts
           npm install
       - name: '运行 【中青看点】'
         if: env.YOUTH_HEADER
