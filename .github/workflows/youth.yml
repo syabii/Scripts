@@ -19,19 +19,23 @@ jobs:
         YOUTH_ARTBODY: ${{ secrets.YOUTH_ARTBODY }}
         YOUTH_REDBODY: ${{ secrets.YOUTH_REDBODY }}
         YOUTH_TIME: ${{ secrets.YOUTH_TIME }}
+        
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        run: | 
+          git clone https://github.com/syabii/JavaScript.git ~/JavaScript      
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
       - name: npm install
         run: |          
+          cd ~/JavaScript
           npm install
       - name: '运行 【中青看点】'
         if: env.YOUTH_HEADER
         run: |          
+          cd ~/JavaScript
           node Task/youth.js
         env:
           YOUTH_NOTIFY_CONTROL: ${{ secrets.YOUTH_NOTIFY_CONTROL }}
