@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Checkout
         run: | 
-          git clone https://github.com/syabii/Scripts/JavaScript.git ~/JavaScript      
+          git clone https://github.com/syabii/Scripts.git ~/Scripts      
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -35,7 +35,7 @@ jobs:
       - name: '运行 【中青看点】'
         if: env.YOUTH_HEADER
         run: |          
-          cd ~/JavaScript
+          cd ~/Scripts
           node Task/youth.js
         env:
           YOUTH_NOTIFY_CONTROL: ${{ secrets.YOUTH_NOTIFY_CONTROL }}
